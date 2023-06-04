@@ -1,0 +1,10 @@
+{{page-title "Feeds"}}
+
+
+<ArticleContainer  @isSearchable="true" @searchArticles={{action this.searchArticles}}>
+  {{#each this.articles as |article|}}
+    <Article @article={{article}}/>
+  {{/each}}
+</ArticleContainer>
+
+{{outlet}}

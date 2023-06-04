@@ -1,0 +1,9 @@
+{{page-title "Favorites"}}
+
+<ArticleContainer>
+  {{#each this.apiHelper.favoriteArticles as |article|}}
+    <Article @article={{article}} />
+  {{/each}}
+</ArticleContainer>
+
+{{outlet}}

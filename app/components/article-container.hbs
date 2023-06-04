@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="tab-content active" id="feeds">
+    {{#if @isSearchable}}
+      <input type="text" id="search" placeholder="Search articles" value={{this.searchText}} {{on "input" this.updateSearchText}}>
+      <button type="button" {{action @searchArticles this.searchText}}>Search</button>
+    {{/if}}
+    <ul class="article-list">
+      {{yield}}
+    </ul>
+  </div>
+</div>

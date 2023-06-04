@@ -1,0 +1,17 @@
+<li class="article {{if this.isRead 'read'}}">
+  <div class="article-content">
+    <div class="article-details" {{action 'redirectToUrl' @article}}>
+      <h3 class="article-title">{{@article.title}}</h3>
+      <em class="article-author">{{@article.author}}</em><br/>
+      {{!-- <a href="#" class="article-source">{{@article.url}}</a> --}}
+      <p class="article-description">{{@description}}</p>
+      {{#if @article.urlToImage}}
+        <img src={{@article.urlToImage}} alt="Article Image" class="article-image">
+      {{/if}}
+      <p class="article-time">Published: {{date-converter @article.publishedAt}}</p>
+    </div>
+    <span class="add-to-favorites {{if this.isFavorite 'active'}}" {{action 'updateFavorite' @article}}>
+      <i class="far fa-star"></i>
+    </span>
+  </div>
+</li>
